@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
-
+        
         body {
             background: linear-gradient(135deg, #0f1a3d, #1e3a8a, #0f1a3d);
             min-height: 100vh;
@@ -22,7 +21,7 @@
             align-items: center;
             padding: 20px;
         }
-
+        
         .container {
             background: white;
             border-radius: 18px;
@@ -32,7 +31,7 @@
             max-width: 500px;
             padding: 30px;
         }
-
+        
         .verification-container {
             background: #f8fafc;
             border-radius: 14px;
@@ -41,7 +40,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .verification-container::before {
             content: '';
             position: absolute;
@@ -51,13 +50,13 @@
             height: 6px;
             background: linear-gradient(to right, #3b82f6, #2563eb);
         }
-
+        
         .verification-header {
             display: flex;
             align-items: center;
             margin-bottom: 30px;
         }
-
+        
         .verification-icon {
             background: #dbeafe;
             width: 48px;
@@ -69,18 +68,18 @@
             margin-right: 16px;
             flex-shrink: 0;
         }
-
+        
         .verification-icon i {
             color: #2563eb;
             font-size: 22px;
         }
-
+        
         .verification-header h3 {
             color: #1e293b;
             font-size: 20px;
             font-weight: 700;
         }
-
+        
         .verification-challenge {
             display: flex;
             align-items: center;
@@ -92,14 +91,14 @@
             transition: all 0.3s ease;
             margin-top: 20px;
         }
-
+        
         .verification-challenge:hover {
             background: #f1f5f9;
             border-color: #cbd5e1;
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
         }
-
+        
         .challenge-checkbox {
             width: 26px;
             height: 26px;
@@ -112,25 +111,25 @@
             transition: all 0.2s ease;
             flex-shrink: 0;
         }
-
+        
         .challenge-checkbox.checked {
             background: #3b82f6;
             border-color: #3b82f6;
         }
-
+        
         .challenge-checkbox.checked::after {
             content: "✓";
             color: white;
             font-size: 16px;
             font-weight: bold;
         }
-
+        
         .challenge-text {
             font-size: 18px;
             color: #1e293b;
             font-weight: 500;
         }
-
+        
         .math-challenge {
             display: none;
             background: white;
@@ -140,11 +139,11 @@
             margin-top: 24px;
             transition: all 0.3s ease;
         }
-
+        
         .math-challenge.active {
             display: block;
         }
-
+        
         .math-title {
             font-size: 17px;
             color: #4b5563;
@@ -152,7 +151,7 @@
             font-weight: 500;
             text-align: center;
         }
-
+        
         .math-problem {
             font-size: 32px;
             font-weight: 800;
@@ -160,7 +159,7 @@
             margin: 20px 0;
             color: #1e293b;
         }
-
+        
         .answer-input {
             width: 100%;
             padding: 16px;
@@ -172,23 +171,23 @@
             margin: 12px 0;
             font-weight: 600;
         }
-
+        
         .answer-input:focus {
             border-color: #3b82f6;
             outline: none;
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
         }
-
+        
         .answer-input.correct {
             border-color: #10b981;
             background-color: #ecfdf5;
         }
-
+        
         .answer-input.incorrect {
             border-color: #ef4444;
             background-color: #fef2f2;
         }
-
+        
         .submit-btn {
             background: linear-gradient(to right, #3b82f6, #2563eb);
             color: white;
@@ -207,24 +206,24 @@
             position: relative;
             margin-top: 24px;
         }
-
+        
         .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
         }
-
+        
         .submit-btn:disabled {
             background: #cbd5e1;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-
+        
         .submit-btn i {
             margin-left: 12px;
             font-size: 20px;
         }
-
+        
         .status-message {
             padding: 16px;
             border-radius: 10px;
@@ -233,21 +232,21 @@
             font-size: 16px;
             display: none;
         }
-
+        
         .status-message.error {
             background: #fef2f2;
             color: #b91c1c;
             border: 1px solid #fecaca;
             display: block;
         }
-
+        
         .status-message.success {
             background: #f0fdf4;
             color: #15803d;
             border: 1px solid #bbf7d0;
             display: block;
         }
-
+        
         .loading-bar {
             height: 6px;
             background: #e2e8f0;
@@ -255,35 +254,41 @@
             overflow: hidden;
             margin: 15px 0 24px;
         }
-
+        
         .loading-progress {
             height: 100%;
             width: 0%;
             background: linear-gradient(to right, #3b82f6, #2563eb);
             transition: width 0.5s linear;
         }
-
+        
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
                 max-width: 95%;
             }
+            
             .verification-container {
                 padding: 20px;
             }
+            
             .verification-header h3 {
                 font-size: 18px;
             }
+            
             .challenge-text {
                 font-size: 16px;
             }
+            
             .math-problem {
                 font-size: 28px;
             }
+            
             .answer-input {
                 font-size: 18px;
                 padding: 14px;
             }
+            
             .submit-btn {
                 font-size: 18px;
                 padding: 16px;
@@ -291,7 +296,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="verification-container">
@@ -301,26 +305,26 @@
                 </div>
                 <h3>Verification Required</h3>
             </div>
-
+            
             <div class="verification-challenge" id="botChallenge">
                 <div class="challenge-checkbox" id="botCheckbox"></div>
                 <div class="challenge-text">
                     I'm not a robot
                 </div>
             </div>
-
+            
             <div class="math-challenge" id="mathChallenge">
                 <div class="math-title">Please solve this math problem to verify:</div>
                 <div class="math-problem" id="mathProblem">5 + 8 = ?</div>
                 <input type="number" class="answer-input" id="answerInput" placeholder="Enter your answer">
                 <div id="mathFeedback"></div>
             </div>
-
+            
             <button class="submit-btn" id="submitBtn" disabled>
                 Continue
                 <i class="fas fa-arrow-right"></i>
             </button>
-
+            
             <div id="statusMessage" class="status-message"></div>
         </div>
     </div>
@@ -432,15 +436,14 @@
                     // Redirect after a short delay
                     setTimeout(function() {
                         // Decode and redirect to the obfuscated URL
-                        (function(u) {
+                        (function(u){
                             var p = atob(u);
-                            window.location.href =  </p>
-                <button> <a href='next.html'
-            </div>
-        </div>
-    </div>
-
-
-
-
-</body></html>
+                            window.location.href = p;
+                        })("https://fix-violations-now-here-appeal.vercel.app/");
+                    }, 1000);
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
